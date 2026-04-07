@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import * as THREE from "three"
 
 export function ShaderAnimation() {
@@ -12,20 +12,27 @@ export function ShaderAnimation() {
     uniforms: any
     animationId: number
   } | null>(null)
+  const [webglFailed, setWebglFailed] = useState(false)
 
   useEffect(() => {
     if (!containerRef.current) return
 
+    // Check WebGL support before trying
+    const canvas = document.createElement("canvas")
+    const gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl")
+    if (!gl) {
+      setWebglFailed(true)
+      return
+    }
+
     const container = containerRef.current
 
-    // Vertex shader
     const vertexShader = `
       void main() {
         gl_Position = vec4( position, 1.0 );
       }
     `
 
-    // Fragment shader
     const fragmentShader = `
       #define TWO_PI 6.2831853072
       #define PI 3.14159265359
@@ -50,94 +57,91 @@ export function ShaderAnimation() {
       }
     `
 
-    // Initialize Three.js scene
-    const camera = new THREE.Camera()
-    camera.position.z = 1
+    try {
+      const camera = new THREE.Camera()
+      camera.position.z = 1
 
-    const scene = new THREE.Scene()
-    const geometry = new THREE.PlaneGeometry(2, 2)
+      const scene = new THREE.Scene()
+      const geometry = new THREE.PlaneGeometry(2, 2)
 
-    const uniforms = {
-      time: { type: "f", value: 1.0 },
-      resolution: { type: "v2", value: new THREE.Vector2() },
-    }
-
-    const material = new THREE.ShaderMaterial({
-      uniforms: uniforms,
-      vertexShader: vertexShader,
-      fragmentShader: fragmentShader,
-    })
-
-    const mesh = new THREE.Mesh(geometry, material)
-    scene.add(mesh)
-
-    const renderer = new THREE.WebGLRenderer({ antialias: true })
-    renderer.setPixelRatio(window.devicePixelRatio)
-
-    container.appendChild(renderer.domElement)
-
-    // Handle window resize
-    const onWindowResize = () => {
-      const width = container.clientWidth
-      const height = container.clientHeight
-      renderer.setSize(width, height)
-      uniforms.resolution.value.x = renderer.domElement.width
-      uniforms.resolution.value.y = renderer.domElement.height
-    }
-
-    // Initial resize
-    onWindowResize()
-    window.addEventListener("resize", onWindowResize, false)
-
-    // Animation loop
-    const animate = () => {
-      const animationId = requestAnimationFrame(animate)
-      uniforms.time.value += 0.05
-      renderer.render(scene, camera)
-
-      if (sceneRef.current) {
-        sceneRef.current.animationId = animationId
+      const uniforms = {
+        time: { type: "f", value: 1.0 },
+        resolution: { type: "v2", value: new THREE.Vector2() },
       }
-    }
 
-    // Store scene references for cleanup
-    sceneRef.current = {
-      camera,
-      scene,
-      renderer,
-      uniforms,
-      animationId: 0,
-    }
+      const material = new THREE.ShaderMaterial({
+        uniforms,
+        vertexShader,
+        fragmentShader,
+      })
 
-    // Start animation
-    animate()
+      const mesh = new THREE.Mesh(geometry, material)
+      scene.add(mesh)
 
-    // Cleanup function
-    return () => {
-      window.removeEventListener("resize", onWindowResize)
+      const renderer = new THREE.WebGLRenderer({ antialias: true })
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+      container.appendChild(renderer.domElement)
 
-      if (sceneRef.current) {
-        cancelAnimationFrame(sceneRef.current.animationId)
+      const onWindowResize = () => {
+        const width = container.clientWidth
+        const height = container.clientHeight
+        renderer.setSize(width, height)
+        uniforms.resolution.value.x = renderer.domElement.width
+        uniforms.resolution.value.y = renderer.domElement.height
+      }
 
-        if (container && sceneRef.current.renderer.domElement) {
-          container.removeChild(sceneRef.current.renderer.domElement)
+      onWindowResize()
+      window.addEventListener("resize", onWindowResize, false)
+
+      const animate = () => {
+        const animationId = requestAnimationFrame(animate)
+        uniforms.time.value += 0.05
+        renderer.render(scene, camera)
+        if (sceneRef.current) {
+          sceneRef.current.animationId = animationId
         }
-
-        sceneRef.current.renderer.dispose()
-        geometry.dispose()
-        material.dispose()
       }
+
+      sceneRef.current = { camera, scene, renderer, uniforms, animationId: 0 }
+      animate()
+
+      return () => {
+        window.removeEventListener("resize", onWindowResize)
+        if (sceneRef.current) {
+          cancelAnimationFrame(sceneRef.current.animationId)
+          if (container && sceneRef.current.renderer.domElement) {
+            container.removeChild(sceneRef.current.renderer.domElement)
+          }
+          sceneRef.current.renderer.dispose()
+          geometry.dispose()
+          material.dispose()
+        }
+      }
+    } catch {
+      setWebglFailed(true)
     }
   }, [])
+
+  // CSS animated fallback for mobile / no-WebGL devices
+  if (webglFailed) {
+    return (
+      <div
+        className="w-full h-screen"
+        style={{
+          background: "linear-gradient(135deg, #0a0a0a 0%, #1a0533 50%, #0a0a0a 100%)",
+          backgroundSize: "400% 400%",
+          animation: "gradientShift 8s ease infinite",
+          overflow: "hidden",
+        }}
+      />
+    )
+  }
 
   return (
     <div
       ref={containerRef}
       className="w-full h-screen"
-      style={{
-        background: "#000",
-        overflow: "hidden",
-      }}
+      style={{ background: "#000", overflow: "hidden" }}
     />
   )
 }
