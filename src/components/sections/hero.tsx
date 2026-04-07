@@ -1,11 +1,16 @@
 "use client"
 
-import { ShaderAnimation } from "@/components/ui/shader-animation"
+import dynamic from "next/dynamic"
+
+const ShaderAnimation = dynamic(
+  () => import("@/components/ui/shader-animation").then((m) => m.ShaderAnimation),
+  { ssr: false, loading: () => <div className="w-full h-full bg-black" /> }
+)
 
 export function Hero() {
   return (
     <section className="relative w-full h-screen overflow-hidden">
-      {/* Shader fills full screen */}
+      {/* Shader fills full screen — loaded client-side only, safe on all browsers */}
       <ShaderAnimation />
 
       {/* Overlay gradient so text is readable */}
