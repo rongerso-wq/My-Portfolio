@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Roni Gershonovitch — Personal Portfolio
+
+A personal portfolio for **Roni Gershonovitch**, Clinical Advisor & AI Enthusiast.
+Built with Next.js, Three.js WebGL shader animation, shadcn/ui, Tailwind CSS, and TypeScript.
+
+---
+
+## Sections
+
+| Section | Description |
+|---|---|
+| **Hero** | Full-screen shader animation with name + tagline overlay |
+| **About** | Bio, background, and key stats |
+| **Skills** | Clinical expertise + AI & technology tools |
+| **Projects** | Cortex AI, Dento-Safe, Solventum Calculator, Artemis Tracker |
+| **Contact** | Email, LinkedIn, GitHub, Website |
+
+---
+
+## Tech Stack
+
+| Tool | Version |
+|---|---|
+| Next.js | 16 (App Router) |
+| React | 19 |
+| TypeScript | 5 |
+| Tailwind CSS | 4 |
+| shadcn/ui | 4 |
+| Three.js | 0.183 |
+| lucide-react | latest |
+
+---
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+```
+src/
+├── app/
+│   ├── layout.tsx               # Root layout
+│   ├── page.tsx                 # Home page — assembles all sections
+│   └── globals.css              # Global styles
+└── components/
+    ├── ui/
+    │   ├── shader-animation.tsx  # Three.js WebGL shader (core animation)
+    │   ├── shader-demo.tsx       # Demo wrapper
+    │   └── button.tsx            # shadcn Button
+    └── sections/
+        ├── hero.tsx              # Hero with shader background
+        ├── about.tsx             # Bio + stats
+        ├── skills.tsx            # Clinical & AI skill pills
+        ├── projects.tsx          # Project cards
+        └── contact.tsx           # Contact links + footer
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Key Component: `ShaderAnimation`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+A full-screen WebGL animation rendered via Three.js with a custom GLSL fragment shader.
+Produces a looping colorful radial wave pattern — used as the hero background.
 
-## Deploy on Vercel
+```tsx
+import { ShaderAnimation } from "@/components/ui/shader-animation"
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<ShaderAnimation />
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Scripts
+
+```bash
+npm run dev      # Start dev server
+npm run build    # Production build
+npm run start    # Start production server
+npm run lint     # Run ESLint
+```
