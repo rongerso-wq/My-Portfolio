@@ -12,7 +12,7 @@ Built with Next.js, Three.js WebGL shader animation, shadcn/ui, Tailwind CSS, an
 | **Hero** | Full-screen shader animation with name + tagline overlay |
 | **About** | Bio, background, and key stats |
 | **Skills** | Clinical expertise + AI & technology tools |
-| **Projects** | Cortex AI, Dento-Safe, Solventum Calculator, Artemis Tracker |
+| **Projects** | Neuro-point, Dento-Safe, Solventum Calculator, Artemis Tracker |
 | **Contact** | Email, LinkedIn, GitHub, Website |
 
 ---

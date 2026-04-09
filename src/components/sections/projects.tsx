@@ -1,6 +1,6 @@
 const projects = [
   {
-    title: "Cortex AI",
+    title: "Neuro-point",
     tag: "AI Platform",
     description:
       "A conversational AI platform designed for clinical workflows. Brings large language model reasoning into structured medical decision-making.",
