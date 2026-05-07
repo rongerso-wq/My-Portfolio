@@ -4,7 +4,7 @@ A personal portfolio for **Roni Gershonovitch**, Clinical Advisor & AI Enthusias
 Built with Next.js, Three.js WebGL shader animation, shadcn/ui, Tailwind CSS, and TypeScript.
 
 ---
-
+i
 ## Sections
 
 | Section | Description |

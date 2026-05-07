@@ -128,9 +128,25 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-black text-foreground;
   }
   html {
     @apply font-sans;
+  }
+  /* Anchor offset under the fixed nav (h-14 = 56px). */
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+}
+
+/* Respect users with vestibular sensitivities. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

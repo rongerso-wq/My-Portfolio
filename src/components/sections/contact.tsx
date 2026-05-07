@@ -1,4 +1,4 @@
-import { Mail, Link2, GitFork } from "lucide-react"
+import { Mail, Link2, Phone } from "lucide-react"
 
 const links = [
   {
@@ -8,16 +8,16 @@ const links = [
     icon: Mail,
   },
   {
+    label: "Phone",
+    value: "+972 52-443-5567",
+    href: "tel:+972524435567",
+    icon: Phone,
+  },
+  {
     label: "LinkedIn",
     value: "dr-roni-gershonovitch-dmd-mph",
     href: "https://www.linkedin.com/in/dr-roni-gershonovitch-dmd-mph-8a4811182/",
     icon: Link2,
-  },
-  {
-    label: "GitHub",
-    value: "github.com/rongerso-wq",
-    href: "https://github.com/rongerso-wq",
-    icon: GitFork,
   },
 ]
 

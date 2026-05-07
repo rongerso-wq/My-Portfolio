@@ -1,23 +1,17 @@
 const clinicalSkills = [
   "Clinical Advisory",
-  "Dental Medicine",
-  "Patient Risk Assessment",
   "Evidence-Based Practice",
-  "Medical Education",
-  "Product Clinical Validation",
+  "Patient Risk Assessment",
   "Trauma Protocols",
-  "Pediatric Dentistry",
+  "Medical Education",
 ]
 
 const aiSkills = [
-  "AI Integration",
-  "Prompt Engineering",
-  "Claude API",
-  "Next.js / React",
-  "Clinical Decision Tools",
+  "Clinical Decision Support",
   "LLM Application Design",
-  "TypeScript",
-  "Tailwind CSS",
+  "Citation-Anchored Logic",
+  "Bilingual Clinical UX",
+  "Prompt Engineering",
 ]
 
 function SkillPill({ label, accent }: { label: string; accent: "purple" | "pink" }) {

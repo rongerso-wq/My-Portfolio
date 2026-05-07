@@ -3,7 +3,6 @@ export function About() {
     <section id="about" className="bg-black py-32 px-6">
       <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-16 items-center">
 
-        {/* Label + heading */}
         <div>
           <p className="text-xs uppercase tracking-[0.3em] text-purple-400 font-mono mb-4">
             About
@@ -17,28 +16,26 @@ export function About() {
           </h2>
         </div>
 
-        {/* Bio text */}
         <div className="space-y-5 text-white/60 text-base leading-relaxed">
           <p>
-            I'm a clinical advisor with deep roots in dental medicine and a growing obsession with
-            artificial intelligence. My work sits at the intersection of healthcare and emerging
-            technology — translating complex clinical knowledge into smarter digital tools.
+            I&apos;m a clinical advisor with deep roots in dental medicine and 15+ years of practice,
+            now working at the intersection of healthcare and emerging technology.
+            I translate complex clinical knowledge into AI-powered tools clinicians can actually trust.
           </p>
           <p>
-            Over the years I've advised on clinical products, built AI-powered calculators and
-            decision aids, and partnered with teams to bring evidence-based thinking into the
-            software development process.
+            My work spans clinical product advisory, decision-support apps, and full-stack
+            AI integration — anchored in evidence-based reasoning, primary literature, and
+            the rigor that regulated clinical software demands.
           </p>
           <p>
-            I believe the future of medicine is built with code — and I'm here to help design it.
+            The future of medicine is built with code — and I&apos;m here to help design it.
           </p>
 
-          {/* Stats row */}
           <div className="grid grid-cols-3 gap-6 pt-6 border-t border-white/10">
             {[
               { value: "15+", label: "Years Clinical" },
-              { value: "10+", label: "AI Projects" },
-              { value: "3", label: "Apps Launched" },
+              { value: "4", label: "Flagship Apps" },
+              { value: "He · En", label: "Bilingual" },
             ].map((stat) => (
               <div key={stat.label}>
                 <p className="text-3xl font-bold text-white">{stat.value}</p>
