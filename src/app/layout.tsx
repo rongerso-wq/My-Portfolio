@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Caveat } from "next/font/google";
+import { Signature } from "@/components/ui/signature";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -65,7 +66,10 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${caveat.variable} h-full antialiased scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col" id="top">{children}</body>
+      <body className="min-h-full flex flex-col" id="top">
+        {children}
+        <Signature />
+      </body>
     </html>
   );
 }

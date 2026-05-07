@@ -58,19 +58,8 @@ export function Contact() {
         </div>
       </div>
 
-      {/* Footer — handwritten signature */}
-      <div className="max-w-4xl mx-auto mt-24 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-        <div className="flex items-baseline gap-3">
-          <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-white/30">
-            Created by
-          </span>
-          <span
-            className="text-2xl sm:text-3xl text-white/70"
-            style={{ fontFamily: "var(--font-caveat), cursive" }}
-          >
-            Roni Gershonovitch
-          </span>
-        </div>
+      {/* Footer — tech credit only; signature is fixed/persistent across the whole page */}
+      <div className="max-w-4xl mx-auto mt-24 pt-8 border-t border-white/5 flex items-center justify-end">
         <span className="text-white/20 text-xs font-mono">
           Built with Next.js + Three.js
         </span>
