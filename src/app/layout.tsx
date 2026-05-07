@@ -20,7 +20,7 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  title: "Dr. Roni Gershonovitch — Clinical AI Advisor",
+  title: "Dr. Roni Gershonovitch WebPage",
   description:
     "DMD, MPH. Clinical advisor and AI enabler building evidence-based decision-support tools at the intersection of dental medicine and machine intelligence.",
   keywords: [
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Dr. Roni Gershonovitch" }],
   openGraph: {
-    title: "Dr. Roni Gershonovitch — Clinical AI Advisor",
+    title: "Dr. Roni Gershonovitch WebPage",
     description:
       "Clinical advisor and AI enabler. Evidence-based decision-support tools for medicine.",
     type: "website",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dr. Roni Gershonovitch — Clinical AI Advisor",
+    title: "Dr. Roni Gershonovitch WebPage",
     description:
       "Clinical advisor and AI enabler. Evidence-based decision-support tools for medicine.",
   },
