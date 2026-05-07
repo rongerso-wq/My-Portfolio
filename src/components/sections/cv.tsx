@@ -1,4 +1,4 @@
-import { Download, FileText, ArrowUpRight } from "lucide-react"
+import { FileText, ArrowUpRight } from "lucide-react"
 
 const CV_PATH = "/cv/roni-gershonovitch-cv.pdf"
 
@@ -106,43 +106,26 @@ export function CV() {
           Digital Medical Advisor · Clinical AI Strategy. 10+ years bridging clinical excellence with digital innovation across Solventum, 3M Healthcare, TEVA, and Rabin Medical Center.
         </p>
 
-        {/* Download / Preview CTAs */}
-        <div className="grid sm:grid-cols-2 gap-4 mb-20">
+        {/* PDF link */}
+        <div className="mb-20">
           <a
             href={CV_PATH}
-            download
-            className="group flex items-center gap-5 p-6 rounded-2xl border border-purple-500/30 bg-purple-500/5 hover:bg-purple-500/10 hover:border-purple-500/60 transition-all duration-300"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-5 p-6 rounded-2xl border border-purple-500/30 bg-purple-500/5 hover:bg-purple-500/10 hover:border-purple-500/60 transition-all duration-300"
           >
             <div className="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center flex-shrink-0 group-hover:bg-purple-500/30 transition-colors">
-              <Download className="w-5 h-5 text-purple-300" />
+              <FileText className="w-5 h-5 text-purple-300" />
             </div>
-            <div className="flex-1 min-w-0">
+            <div className="min-w-0">
               <p className="text-purple-300/60 text-xs font-mono uppercase tracking-widest mb-0.5">
-                Download
+                CV
               </p>
               <p className="text-white text-sm font-medium">
                 Roni Gershonovitch — CV (PDF)
               </p>
             </div>
             <ArrowUpRight className="w-4 h-4 text-purple-300/60 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 flex-shrink-0" />
-          </a>
-
-          <a
-            href={CV_PATH}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex items-center gap-5 p-6 rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] hover:border-white/30 transition-all duration-300"
-          >
-            <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center flex-shrink-0 group-hover:bg-white/10 transition-colors">
-              <FileText className="w-5 h-5 text-white/70" />
-            </div>
-            <div className="flex-1 min-w-0">
-              <p className="text-white/40 text-xs font-mono uppercase tracking-widest mb-0.5">
-                Preview
-              </p>
-              <p className="text-white text-sm font-medium">Open in new tab</p>
-            </div>
-            <ArrowUpRight className="w-4 h-4 text-white/40 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 flex-shrink-0" />
           </a>
         </div>
 
