@@ -59,9 +59,9 @@ export function About() {
             },
             {
               src: "/about/workshop.jpg",
-              alt: "Dr. Roni Gershonovitch leading a clinical workshop at Solventum",
+              alt: "Dr. Roni Gershonovitch leading a clinical workshop",
               eyebrow: "In the field",
-              caption: "Solventum hands-on workshop · HCPs",
+              caption: "Hands-on clinical workshop · HCPs",
             },
           ].map((p) => (
             <figure
@@ -71,18 +71,13 @@ export function About() {
               <img
                 src={p.src}
                 alt={p.alt}
-                className="absolute inset-0 w-full h-full object-cover grayscale contrast-110"
+                className="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
               />
-              {/* Duotone tint — purple/pink wash to integrate with brand palette */}
+              {/* Bottom darkening for caption legibility */}
               <div
                 aria-hidden
-                className="absolute inset-0 mix-blend-color bg-gradient-to-br from-purple-500/60 via-transparent to-pink-500/50"
-              />
-              {/* Edge darkening for caption legibility */}
-              <div
-                aria-hidden
-                className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/30"
+                className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"
               />
               <figcaption className="absolute bottom-5 left-5 right-5 md:bottom-6 md:left-6">
                 <p className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-white/60 font-mono mb-1">
