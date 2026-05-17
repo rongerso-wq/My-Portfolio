@@ -14,23 +14,33 @@ type Project = {
 }
 
 const featured: Project = {
-  title: "Octo-perio",
-  tag: "Clinical AI Suite",
+  title: "ReboundIQ",
+  tag: "GLP-1 Maintenance AI",
   description:
-    "Bilingual periodontal & peri-implant decision support. Implements AAP/EFP 2018 staging, the IDRA implant-risk octagon, and EFP S3 stepwise treatment. Hybrid radiographic AI — offline ONNX plus opt-in Claude Vision — generates a chart-ready bilingual referral letter, ICD-10 ready.",
+    "Concept artifact for Novo Nordisk: predict the post-GLP-1 weight rebound before it happens and personalize the maintenance to prevent it. Pairs an evidence-anchored 12-month rebound forecast with a Claude-powered maintenance coach — so patients keep what they earned on therapy, and clinicians can stratify, taper, and follow up with data, not guesswork.",
   highlights: [
-    "Bilingual He · En",
-    "Offline + Cloud AI",
-    "AAP/EFP 2018",
-    "Citation-anchored",
+    "Bilingual EN · HE",
+    "Evidence-anchored",
+    "Claude Coach",
+    "HCP + Patient modes",
   ],
-  tech: ["React", "Tailwind", "Claude Vision", "Vercel Edge", "ONNX Runtime"],
-  href: "https://octo-perio.vercel.app/",
-  image: "/projects/octo-perio.jpg",
-  accent: "purple",
+  tech: ["React", "Tailwind", "Claude Sonnet 4.6", "Vercel Edge"],
+  href: "https://rebound-iq.vercel.app",
+  image: "/projects/reboundiq.jpg",
+  accent: "pink",
 }
 
 const projects: Project[] = [
+  {
+    title: "Octo-perio",
+    tag: "Clinical AI Suite",
+    description:
+      "Bilingual periodontal & peri-implant decision support. AAP/EFP 2018 staging, the IDRA implant-risk octagon, and EFP S3 stepwise treatment. Hybrid radiographic AI — offline ONNX plus opt-in Claude Vision — generates a chart-ready bilingual referral letter, ICD-10 ready.",
+    tech: ["React", "Claude Vision", "ONNX"],
+    href: "https://octo-perio.vercel.app/",
+    image: "/projects/octo-perio.jpg",
+    accent: "purple",
+  },
   {
     title: "Neuro-point",
     tag: "Clinical Decision Suite",
@@ -164,7 +174,7 @@ export function Projects() {
         </a>
 
         {/* Grid */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {projects.map((p) => (
             <a
               key={p.title}
