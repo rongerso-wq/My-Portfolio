@@ -15,10 +15,10 @@ const awards: Recognition[] = [
   {
     title: "Special Cultural Element Award",
     issuer: "Solventum · Dental Solutions EMEA",
-    year: "2024",
+    year: "2026",
     citation:
       "Recognized for dedication and effort in developing an AI application with the potential to bring great benefits to the business. Cultural element: Win with Excellence · Lead.",
-    image: "/awards/solventum-cultural-element-2024.jpg",
+    image: "/awards/solventum-cultural-element-2026.jpg",
     accent: "orange",
   },
 ]
