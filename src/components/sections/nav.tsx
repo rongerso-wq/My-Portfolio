@@ -2,6 +2,7 @@ const links = [
   { label: "About", href: "#about" },
   { label: "Work", href: "#projects" },
   { label: "CV", href: "#cv" },
+  { label: "Awards", href: "#awards" },
   { label: "Contact", href: "#contact" },
 ]
 
