@@ -32,13 +32,23 @@ const featured: Project = {
 
 const projects: Project[] = [
   {
-    title: "Octo-perio",
-    tag: "Clinical AI Suite",
+    title: "VibeWorking",
+    tag: "Job-Search Coaching Platform",
     description:
-      "Bilingual periodontal & peri-implant decision support. AAP/EFP 2018 staging, the IDRA implant-risk octagon, and EFP S3 stepwise treatment. Hybrid radiographic AI — offline ONNX plus opt-in Claude Vision — generates a chart-ready bilingual referral letter, ICD-10 ready.",
-    tech: ["React", "Claude Vision", "ONNX"],
-    href: "https://octo-perio.vercel.app/",
-    image: "/projects/octo-perio.jpg",
+      "Real one-on-one help with your CV, LinkedIn, and interviews — job-search coaching and matching in Israel, with relocation support for those moving abroad. \"Your dream job, together.\"",
+    tech: ["React", "Vite", "Tailwind"],
+    href: "https://vibeworking-xi.vercel.app/",
+    image: "/projects/vibeworking.png",
+    accent: "orange",
+  },
+  {
+    title: "Universal Medical App Advisor",
+    tag: "SaMD Classification Engine",
+    description:
+      "Classifies medical software under FDA 21 CFR 820, EU MDR Rule 11, and IEC 62304, then walks the user through generating a full Design History File — risk management (ISO 14971 FMEA), traceability matrix, cybersecurity threat model, and 11 more regulatory documents.",
+    tech: ["React", "Regulatory Logic", "ISO 14971"],
+    href: "https://rongerso-wq.github.io/universal-medical-app-advisor/",
+    image: "/projects/universal-medical-advisor.png",
     accent: "purple",
   },
   {
@@ -52,23 +62,23 @@ const projects: Project[] = [
     accent: "pink",
   },
   {
-    title: "Solventum Calculator",
-    tag: "Branded Clinical Tool",
+    title: "Apex Home Solutions",
+    tag: "Contractor Landing Page",
     description:
-      "Clinic profitability calculator for Solventum's Filtek One Bulk Fill and Clinpro Clear Fluoride. Real-time P&L impact analysis with time savings, revenue projections, and print-ready PDF export.",
-    tech: ["HTML/JS", "Solventum Brand", "Print PDF"],
-    href: "https://rongerso-wq.github.io/Solventum-All/health-care-calculator-solventum.html",
-    image: "/projects/solventum-calc.jpg",
+      "Cinematic landing page for a home renovation & remodeling contractor — GSAP-driven scroll animations, before/after project gallery, testimonials, and a lead-capture quote modal.",
+    tech: ["React", "GSAP", "Tailwind CSS v4"],
+    href: "https://apex-home-solutions-ecru.vercel.app",
+    image: "/projects/apex-home-solutions.png",
     accent: "orange",
   },
   {
-    title: "DentoSafe",
-    tag: "Trauma Decision Support",
+    title: "CardiaHome",
+    tag: "Remote Monitoring Concept",
     description:
-      "IADT 2020 dental trauma protocols with dual modes — first-aid guidance for parents and full clinical workflows for dentists, including splinting details, follow-up schedules, and prognosis.",
-    tech: ["React", "IADT 2020", "Clinical Logic"],
-    href: "https://rongerso-wq.github.io/DentoSafe/",
-    image: "/projects/dentosafe.jpg",
+      "Elderly-first mobile dashboard for Congestive Heart Failure patients — daily self-check (weight, blood pressure, symptoms), medication tracking, and a direct line to the care team, with a Green/Yellow/Red zone engine flagging red flags in real time.",
+    tech: ["Vanilla JS", "Inline SVG", "Clinical Logic"],
+    href: "https://rongerso-wq.github.io/CardiaHome/",
+    image: "/projects/cardiahome.png",
     accent: "pink",
   },
 ]
