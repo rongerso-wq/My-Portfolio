@@ -14,32 +14,32 @@ type Project = {
 }
 
 const featured: Project = {
-  title: "ReboundIQ",
-  tag: "GLP-1 Maintenance AI",
+  title: "VibeWorking",
+  tag: "Job-Search Coaching Platform",
   description:
-    "Concept artifact for Novo Nordisk: predict the post-GLP-1 weight rebound before it happens and personalize the maintenance to prevent it. Pairs an evidence-anchored 12-month rebound forecast with a Claude-powered maintenance coach — so patients keep what they earned on therapy, and clinicians can stratify, taper, and follow up with data, not guesswork.",
+    "Real one-on-one help with your CV, LinkedIn, and interviews — job-search coaching and matching in Israel, with relocation support for those moving abroad. Your dream job, together.",
   highlights: [
-    "Bilingual EN · HE",
-    "Evidence-anchored",
-    "Claude Coach",
-    "HCP + Patient modes",
+    "1:1 Coaching",
+    "CV + LinkedIn",
+    "Interview Prep",
+    "Relocation Support",
   ],
-  tech: ["React", "Tailwind", "Claude Sonnet 4.6", "Vercel Edge"],
-  href: "https://rebound-iq.vercel.app",
-  image: "/projects/reboundiq.jpg",
-  accent: "pink",
+  tech: ["React", "Vite", "Tailwind"],
+  href: "https://vibeworking-xi.vercel.app/",
+  image: "/projects/vibeworking.png",
+  accent: "orange",
 }
 
 const projects: Project[] = [
   {
-    title: "VibeWorking",
-    tag: "Job-Search Coaching Platform",
+    title: "ReboundIQ",
+    tag: "GLP-1 Maintenance AI",
     description:
-      "Real one-on-one help with your CV, LinkedIn, and interviews — job-search coaching and matching in Israel, with relocation support for those moving abroad. \"Your dream job, together.\"",
-    tech: ["React", "Vite", "Tailwind"],
-    href: "https://vibeworking-xi.vercel.app/",
-    image: "/projects/vibeworking.png",
-    accent: "orange",
+      "Concept artifact for Novo Nordisk: predict the post-GLP-1 weight rebound before it happens and personalize the maintenance to prevent it. Pairs an evidence-anchored 12-month rebound forecast with a Claude-powered maintenance coach.",
+    tech: ["React", "Tailwind", "Claude Sonnet 4.6", "Vercel Edge"],
+    href: "https://rebound-iq.vercel.app",
+    image: "/projects/reboundiq.jpg",
+    accent: "pink",
   },
   {
     title: "Universal Medical App Advisor",
