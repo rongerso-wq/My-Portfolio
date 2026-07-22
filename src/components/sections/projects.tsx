@@ -137,7 +137,7 @@ export function Projects() {
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-transparent" />
-              <span className="absolute top-5 left-5 text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 rounded-full bg-black/60 backdrop-blur text-white/80 border border-white/10">
+              <span className="absolute bottom-5 left-5 text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 rounded-full bg-black/60 backdrop-blur text-white/80 border border-white/10">
                 Featured
               </span>
             </div>
